@@ -55,6 +55,10 @@ function getData() {
 }
 function updateMapWithData(data) {
     if (data && data.length > 0) {
+        // objectManager.remove(objectManager.objects.getAll('geometry.type', 'Point'));
+        myMap.geoObjects.remove(objectManager);
+        objectManager.removeAll();
+        
         document.getElementById('totalFires').innerText = 'Количество: ' + data.length;
         var features = data.map(function (location, index) {
             return {
@@ -66,7 +70,8 @@ function updateMapWithData(data) {
                 },
                 properties: {
                     iconContent: '1',
-                    label: location.label
+                    label: location.label,
+                    hintContent: 'Дата: ' + location.dt
                 }
             };
         });
@@ -75,9 +80,10 @@ function updateMapWithData(data) {
             type: 'FeatureCollection',
             features: features
         });
-
         myMap.geoObjects.add(objectManager);
     } else {
+        
+        document.getElementById('totalFires').innerText = 'Количество: ' + 0;
         console.error('Данные не получены из базы данных.');
     }
 }

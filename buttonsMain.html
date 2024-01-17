@@ -1,0 +1,43 @@
+<div class="d-flex">
+    <div class="col-md-3">
+        <label for="year" class="form-label">Выберите год:</label>
+        <select class="form-select" id="year">
+            <option value="2021">2021</option>
+            <option value="2018">2018</option>
+            <option value="2012">2012</option>
+        </select>
+    </div>
+
+    <div class="col-md-3 ms-3">
+        <label for="month" class="form-label">Выберите месяц:</label>
+        <select class="form-select" id="month">
+            <option value="1">Январь</option>
+            <option value="2">Февраль</option>
+            <option value="3">Март</option>
+            <option value="4">Апрель</option>
+            <option value="5">Май</option>
+            <option value="6">Июнь</option>
+            <option value="7">Июль</option>
+            <option value="8">Август</option>
+            <option value="9">Сентябрь</option>
+            <option value="10">Октябрь</option>
+            <option value="11">Ноябрь</option>
+            <option value="12">Декабрь</option>
+        </select>
+    </div>
+
+    <div class="col-md-3 ms-3">
+        <label for="fireType" class="form-label">Выберите тип пожара:</label>
+        <select class="form-select" id="fireType">
+            <option value="1">Неконтролируемый пал</option>
+            <option value="2">Торфяной пожар</option>
+            <option value="3">Лесной пожар</option>
+            <option value="4">Природный пожар</option>
+            <option value="5">Контролируемый пал</option>
+        </select>
+    </div>
+    <div class="align-self-end ms-3">
+        <button class="btn btn-primary" onclick="updateMap()">Обновить карту</button>
+    </div>
+    <div class="align-self-end ms-2" id="totalFires">Количество: 0</div>
+</div>
