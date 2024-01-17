@@ -159,23 +159,19 @@ function getData() {
             }
         });
 
-  
         data.forEach(function (point) {
    
             var pointCoords = [point.lat, point.lon];
-
-        
+  
             var insidePolygon = polygons.find(function (polygon) {
                 var polygonBounds = ymaps.util.bounds.fromPoints(polygon.geometry.coordinates[0]);
                 return ymaps.util.bounds.containsPoint(polygonBounds, pointCoords);
             });
 
-     
             if (insidePolygon) {
                 var polygonId = insidePolygon.id;
                 console.log('Точка ID:', point.id, 'находится внутри полигона ID:', polygonId);
 
-       
                 var data = polygonsData.get(polygonId);
                 var counter = isNaN(data.counter) ? 0 : data.counter;
                 polygonsData.set(polygonId, { color: data.color, counter: counter + 1 });

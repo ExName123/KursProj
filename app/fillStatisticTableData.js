@@ -12,12 +12,9 @@ $(document).ready(function () {
         }
     });
 
-    // Function to populate the table with data
     function fillTableData(data) {
-        // Reference to the table body
         var tableBody = $('#firesTableBody');
 
-        // Loop through the data and append rows to the table
         data.forEach(function (entry) {
             var row = '<tr>';
             row += '<td style="font-weight: bold;">' + entry.year + '</td>';

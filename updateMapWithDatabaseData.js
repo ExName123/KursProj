@@ -11,11 +11,11 @@ function init() {
 
     objectManager = new ymaps.ObjectManager({
         clusterize: true,
-        gridSize: 32,
+        gridSize: 24,
         clusterIconLayout: 'default#pieChart',
-        clusterIconPieChartRadius: 25,
-        clusterIconPieChartCoreRadius: 15,
-        clusterIconPieChartStrokeWidth: 3,
+        clusterIconPieChartRadius: 16,
+        clusterIconPieChartCoreRadius: 8,
+        clusterIconPieChartStrokeWidth: 5,
         geoObjectOpenBalloonOnClick: true
     });
 
