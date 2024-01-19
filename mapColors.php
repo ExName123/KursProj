@@ -20,21 +20,35 @@
 </head>
 
 <body style="background-image: url(images/background.jpg);" class="container-fluid">
-    <header class="container rounded-start rounded-end bg-primary shadow p-3 mt-4 mb-4 rounded">
+    <header class="container rounded-start rounded-end bg-primary shadow p-3 mt-2 mb-4 rounded">
         <?php require('html/header.html') ?>
         <button id="toggleMapPlaces" class="btn btn-primary mb-0">Карта мест</button>
-        <button style="background-color: #0b5ed7" id="toggleDensityMap" class="btn btn-primary ms-3 mb-0">Карта плотности</button>
+        <button style="background-color: #0b5ed7" id="toggleDensityMap" class="btn btn-primary ms-3 mb-0">Карта распределения</button>
         <button id="toggleRegionStats" class="btn btn-primary ms-3 mb-0">Статистика</button>
         <button id="toggleDescriptionButton" onclick="showDescription()" class="btn btn-primary ms-3">Описание</button>
 
     </header>
     <main class="container mb-5">
+        <div class="custom-box">
+            <div class="bg-light shadow p-1 mb-4 bg-white rounded" style="font-size: 18px;" id="contentBlock">
+                <span class="arrow">&#9658;</span>
+                <div id="textDescription">
+                "Карта распределения" - отображает регионы пожаров с примененными фильтрами, предоставляя информацию общего количества возгораний в каждом регионе.
+                </div>
+            </div>
+        </div>
         <?php require('html/buttonsMain.html') ?>
 
         <div id="map" class="inverted-map mt-3"></div>
         <div class="overlay-filter"></div>
     </main>
-    <?php require('html/footer.html') ?>
+    <?php require('toggleDescriptionMaps.html');
+    require('html/footer.html') ?>
 </body>
+<script>
+    window.onload = function() {
+        showDescription();
+    };
+</script>
 
 </html>

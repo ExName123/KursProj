@@ -1,0 +1,37 @@
+<style>
+    .custom-box {
+        position: relative;
+        overflow: hidden;
+        transition: width 0.5s ease;
+        cursor: pointer;
+    }
+    .collapsed {
+        font-size: 12pt;
+        width: 30px;
+        background-color: #0b5ed7 !important;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .arrow {
+        display: none;
+    }
+    .collapsed .arrow {
+        display: inline-block;
+    }
+</style>
+<script>
+    document.getElementById('contentBlock').addEventListener('click', function () {
+        var textDescription = document.getElementById('textDescription');
+        var contentBlock = document.getElementById('contentBlock');
+
+        if (textDescription.style.display === 'none') {
+            textDescription.style.display = 'block';
+            contentBlock.classList.remove('collapsed');
+        } else {
+            textDescription.style.display = 'none';
+            contentBlock.classList.add('collapsed');
+        }
+    });
+</script>

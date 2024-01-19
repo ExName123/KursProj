@@ -11,14 +11,17 @@ $(document).ready(function () {
             console.error('Error', error);
         }
     });
-
+    var monthNames = [
+        "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+        "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"
+    ];
     function fillTableData(data) {
         var tableBody = $('#firesTableBody');
 
         data.forEach(function (entry) {
             var row = '<tr>';
             row += '<td style="font-weight: bold;">' + entry.year + '</td>';
-            row += '<td>' + entry.month + '</td>';
+            row += '<td>' + monthNames[entry.month - 1] + '</td>';
             row += '<td>' + entry.count_fires + '</td>';
             row += '</tr>';
             tableBody.append(row);
